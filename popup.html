@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PXI Fusion</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      background-color: #f4f4f4;
+    }
+    .button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      border: none;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    .copy-box {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .copy-box textarea {
+      width: calc(100% - 40px);
+      padding: 5px;
+      border-radius: 5px;
+    }
+    .copy-button {
+      padding: 5px 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+    .icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <a href="#" class="button" id="open-prodigy">Open Prodigy</a>
+
+  <div class="copy-box">
+    <textarea id="code" readonly>(function() {
+    const scriptUrl = "https://raw.githubusercontent.com/DragonProdHax/PXI/main/PXI%20Fusion";
+
+    // Fetch the script
+    fetch(scriptUrl)
+        .then(response => response.text())
+        .then(code => {
+            // Execute the code
+            eval(code);
+        })
+        .catch(error => console.error("Failed to load the script:", error));
+})();
+</textarea>
+    <button class="copy-button" id="copy-code">Copy</button>
+  </div>
+
+  <a href="https://www.youtube.com/@PXIFusionX" target="_blank">
+    <img src="icons/yt.png" alt="YouTube" class="icon">
+  </a>
+  <a href="https://discord.com/invite/yourdiscordlink" target="_blank">
+    <img src="icons/dis.png" alt="Discord" class="icon">
+  </a>
+</body>
+<script src="popup.js"></script>
+</html>
