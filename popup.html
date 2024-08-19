@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.5">
   <title>PXI Fusion</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 10px;
       background-color: #f4f4f4;
+      width: 400px;
+      height: 600px;
     }
     .button {
       display: block;
@@ -29,14 +31,13 @@
       display: flex;
       align-items: center;
       margin-bottom: 10px;
-      height: 150px;
     }
     .copy-box textarea {
       width: calc(100% - 40px);
       padding: 5px;
       border-radius: 5px;
-      height: 100%;
-      resize: both;
+      height: 100px;
+      resize: none;
     }
     .copy-button {
       padding: 5px 10px;
@@ -45,20 +46,31 @@
       border: none;
       border-radius: 5px;
       margin-left: 10px;
-      height: 40px;
     }
     .icon {
       width: 30px;
       height: 30px;
       margin-right: 10px;
     }
+    h2 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    p {
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
   <a href="#" class="button" id="open-prodigy">Open Prodigy</a>
 
+  <h2>Instructions:</h2>
+
+  <h3>Console Version:</h3>
+  <p>Copy the code below and paste it into the console of your browser's developer tools:</p>
+
   <div class="copy-box">
-    <textarea id="code" readonly>(function() {
+    <textarea id="console-code" readonly>(function() {
     const scriptUrl = "https://raw.githubusercontent.com/DragonProdHax/PXI/main/PXI%20Fusion";
 
     // Fetch the script
@@ -71,7 +83,27 @@
         .catch(error => console.error("Failed to load the script:", error));
 })();
 </textarea>
-    <button class="copy-button" id="copy-code">Copy</button>
+    <button class="copy-button" id="copy-console-code">Copy</button>
+  </div>
+
+  <h3>Bookmark Version:</h3>
+  <p>Drag the code below to your bookmarks bar or create a new bookmark and paste the code in the URL field:</p>
+
+  <div class="copy-box">
+    <textarea id="bookmark-code" readonly>javascript:(function() {
+    const scriptUrl = "https://raw.githubusercontent.com/DragonProdHax/PXI/main/PXI%20Fusion";
+
+    // Fetch the script
+    fetch(scriptUrl)
+        .then(response => response.text())
+        .then(code => {
+            // Execute the code
+            eval(code);
+        })
+        .catch(error => console.error("Failed to load the script:", error));
+})();
+</textarea>
+    <button class="copy-button" id="copy-bookmark-code">Copy</button>
   </div>
 
   <a href="https://www.youtube.com/@PXIFusionX" target="_blank">
