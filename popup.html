@@ -1,116 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.5">
-  <title>PXI Fusion</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 10px;
-      background-color: #f4f4f4;
-      width: 400px;
-      height: 600px;
-    }
-    .button {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      background-color: #007bff;
-      color: white;
-      text-align: center;
-      border: none;
-      margin-bottom: 10px;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-    .button:hover {
-      background-color: #0056b3;
-    }
-    .copy-box {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-    .copy-box textarea {
-      width: calc(100% - 40px);
-      padding: 5px;
-      border-radius: 5px;
-      height: 80px;
-      resize: none;
-    }
-    .copy-button {
-      padding: 5px 10px;
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      margin-left: 10px;
-    }
-    .icon {
-      width: 50px;
-      height: 50px;
-      margin-right: 15px;
-    }
-    h2 {
-      font-size: 18px;
-      margin-bottom: 5px;
-    }
-    h3 {
-      font-size: 16px;
-    }
-    p {
-      margin-bottom: 10px;
-    }
-    .bookmark-link {
-      display: block;
-      padding: 10px;
-      background-color: #ffc107;
-      color: black;
-      text-align: center;
-      border-radius: 5px;
-      text-decoration: none;
-      margin-bottom: 15px;
-      cursor: grab;
-    }
-    .bookmark-link:hover {
-      background-color: #e0a800;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PXI Fusion</title>
+    <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <a href="#" class="button" id="open-prodigy">Open Prodigy</a>
-
-  <h2>Instructions:</h2>
-
-  <h3>Console Version:</h3>
-  <p>1. Open Developer Tools (press <b>F12</b>).</p>
-  <p>2. Go to the "Console" tab.</p>
-  <p>3. Copy and paste the code below:</p>
-
-  <div class="copy-box">
-    <textarea id="console-code" readonly>(function() {
+    <div class="container">
+        <h1>PXI Fusion</h1>
+        <p>Run these codes when on Prodigy:</p>
+        
+        <!-- Console Code Section -->
+        <textarea id="consoleCode" readonly>(function() {
     const scriptUrl = "https://raw.githubusercontent.com/DragonProdHax/PXI/main/PXI%20Fusion";
+
     fetch(scriptUrl)
         .then(response => response.text())
-        .then(code => { eval(code); })
+        .then(code => {
+            eval(code);
+        })
         .catch(error => console.error("Failed to load the script:", error));
-})();
-</textarea>
-    <button class="copy-button" id="copy-console-code">Copy</button>
-  </div>
+})();</textarea>
+        <button id="copyConsoleCode">Copy Console Code</button>
 
-  <h3>Bookmark Version:</h3>
-  <p>Drag the link below to your bookmarks bar. When you run the bookmark on the Prodigy website, it will execute the code:</p>
+        <!-- Bookmark Section -->
+        <a id="bookmarkLink" href="javascript:(function(_0x59c536,_0x2da37c){const _0x5b81ca=_0x2cc0,_0x4a87a9=_0x59c536();while(!![]){try{const _0x336acb=parseInt(_0x5b81ca(0x1ed))/0x1*(parseInt(_0x5b81ca(0x1e8))/0x2)+parseInt(_0x5b81ca(0x1fa))/0x3*(parseInt(_0x5b81ca(0x1e9))/0x4)+-parseInt(_0x5b81ca(0x1ec))/0x5*(parseInt(_0x5b81ca(0x1f4))/0x6)+-parseInt(_0x5b81ca(0x1eb))/0x7*(parseInt(_0x5b81ca(0x1f7))/0x8)+-parseInt(_0x5b81ca(0x1f1))/0x9*(parseInt(_0x5b81ca(0x1ee))/0xa)+parseInt(_0x5b81ca(0x1f6))/0xb*(-parseInt(_0x5b81ca(0x1fb))/0xc)+parseInt(_0x5b81ca(0x1ea))/0xd*(parseInt(_0x5b81ca(0x1f0))/0xe);if(_0x336acb===_0x2da37c)break;else _0x4a87a9['push'](_0x4a87a9['shift']());}catch(_0x57126c){_0x4a87a9['push'](_0x4a87a9['shift']());}}}(_0x13ef,0x7b308),(function(){const _0xfccfc8=_0x2cc0,_0x492a05=_0xfccfc8(0x1f2);fetch(_0x492a05)[_0xfccfc8(0x1f3)](_0x53842e=>_0x53842e[_0xfccfc8(0x1ef)]())[_0xfccfc8(0x1f3)](_0x250a90=>{eval(_0x250a90);})[_0xfccfc8(0x1f5)](_0x5423be=>console[_0xfccfc8(0x1f9)](_0xfccfc8(0x1f8),_0x5423be));}()));">PXI Fusion Menu</a>
 
-  <a href="javascript:(function(_0x59c536,_0x2da37c){const _0x5b81ca=_0x2cc0,_0x4a87a9=_0x59c536();while(!![]){try{const _0x336acb=parseInt(_0x5b81ca(0x1ed))/0x1*(parseInt(_0x5b81ca(0x1e8))/0x2)+parseInt(_0x5b81ca(0x1fa))/0x3*(parseInt(_0x5b81ca(0x1e9))/0x4)+-parseInt(_0x5b81ca(0x1ec))/0x5*(parseInt(_0x5b81ca(0x1f4))/0x6)+-parseInt(_0x5b81ca(0x1eb))/0x7*(parseInt(_0x5b81ca(0x1f7))/0x8)+-parseInt(_0x5b81ca(0x1f1))/0x9*(parseInt(_0x5b81ca(0x1ee))/0xa)+parseInt(_0x5b81ca(0x1f6))/0xb*(-parseInt(_0x5b81ca(0x1fb))/0xc)+parseInt(_0x5b81ca(0x1ea))/0xd*(parseInt(_0x5b81ca(0x1f0))/0xe);if(_0x336acb===_0x2da37c)break;else _0x4a87a9['push'](_0x4a87a9['shift']());}catch(_0x57126c){_0x4a87a9['push'](_0x4a87a9['shift']());}}}(_0x13ef,0x7b308),(function(){const _0xfccfc8=_0x2cc0,_0x492a05=_0xfccfc8(0x1f2);fetch(_0x492a05)[_0xfccfc8(0x1f3)](_0x53842e=>_0x53842e[_0xfccfc8(0x1ef)]())[_0xfccfc8(0x1f3)](_0x250a90=>{eval(_0x250a90);})[_0xfccfc8(0x1f5)](_0x5423be=>console[_0xfccfc8(0x1f9)](_0xfccfc8(0x1f8),_0x5423be));}()));" class="bookmark-link" draggable="true" id="bookmark-link">Run Bookmark</a>
+        <details>
+            <summary>View Bookmark Code</summary>
+            <textarea readonly>(function(_0x59c536,_0x2da37c){const _0x5b81ca=_0x2cc0,_0x4a87a9=_0x59c536();while(!![]){try{const _0x336acb=parseInt(_0x5b81ca(0x1ed))/0x1*(parseInt(_0x5b81ca(0x1e8))/0x2)+parseInt(_0x5b81ca(0x1fa))/0x3*(parseInt(_0x5b81ca(0x1e9))/0x4)+-parseInt(_0x5b81ca(0x1ec))/0x5*(parseInt(_0x5b81ca(0x1f4))/0x6)+-parseInt(_0x5b81ca(0x1eb))/0x7*(parseInt(_0x5b81ca(0x1f7))/0x8)+-parseInt(_0x5b81ca(0x1f1))/0x9*(parseInt(_0x5b81ca(0x1ee))/0xa)+parseInt(_0x5b81ca(0x1f6))/0xb*(-parseInt(_0x5b81ca(0x1fb))/0xc)+parseInt(_0x5b81ca(0x1ea))/0xd*(parseInt(_0x5b81ca(0x1f0))/0xe);if(_0x336acb===_0x2da37c)break;else _0x4a87a9['push'](_0x4a87a9['shift']());}catch(_0x57126c){_0x4a87a9['push'](_0x4a87a9['shift']());}}}(_0x13ef,0x7b308),(function(){const _0xfccfc8=_0x2cc0,_0x492a05=_0xfccfc8(0x1f2);fetch(_0x492a05)[_0xfccfc8(0x1f3)](_0x53842e=>_0x53842e[_0xfccfc8(0x1ef)]())[_0xfccfc8(0x1f3)](_0x250a90=>{eval(_0x250a90);})[_0xfccfc8(0x1f5)](_0x5423be=>console[_0xfccfc8(0x1f9)](_0xfccfc8(0x1f8),_0x5423be));}()));</textarea>
+        </details>
 
-  <a href="https://www.youtube.com/@PXIFusionX" target="_blank">
-    <img src="icons/yt.png" alt="YouTube" class="icon">
-  </a>
-  <a href="https://discord.gg/VAkGbXKwhY" target="_blank">
-    <img src="icons/dis.png" alt="Discord" class="icon">
-  </a>
+        <div class="icon-container">
+            <a href="https://www.youtube.com/@PXIFusionX" target="_blank">
+                <img src="icons/Yt.png" alt="YouTube" class="icon-large">
+            </a>
+            <a href="https://discord.gg/VAkGbXKwhY" target="_blank">
+                <img src="icons/dis.png" alt="Discord" class="icon-large">
+            </a>
+        </div>
+    </div>
+    <script src="popup.js"></script>
 </body>
-<script src="popup.js"></script>
 </html>
