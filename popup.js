@@ -9,10 +9,3 @@ document.getElementById('open-prodigy').addEventListener('click', () => {
     alert('Console code copied to clipboard!');
   });
   
-  document.getElementById('copy-bookmark-code').addEventListener('click', () => {
-    const code = document.getElementById('bookmark-code');
-    code.select();
-    document.execCommand('copy');
-    alert('Bookmark code copied to clipboard!');
-  });
-  

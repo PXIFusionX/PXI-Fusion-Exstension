@@ -36,7 +36,7 @@
       width: calc(100% - 40px);
       padding: 5px;
       border-radius: 5px;
-      height: 100px;
+      height: 80px;
       resize: none;
     }
     .copy-button {
@@ -56,8 +56,25 @@
       font-size: 18px;
       margin-bottom: 5px;
     }
+    h3 {
+      font-size: 16px;
+    }
     p {
       margin-bottom: 10px;
+    }
+    .bookmark-link {
+      display: block;
+      padding: 10px;
+      background-color: #ffc107;
+      color: black;
+      text-align: center;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-bottom: 15px;
+      cursor: grab;
+    }
+    .bookmark-link:hover {
+      background-color: #e0a800;
     }
   </style>
 </head>
@@ -67,7 +84,9 @@
   <h2>Instructions:</h2>
 
   <h3>Console Version:</h3>
-  <p>Copy the code below and paste it into the console of your browser's developer tools:</p>
+  <p>1. Open your browser's Developer Tools (usually by pressing <b>F12</b>).</p>
+  <p>2. Go to the "Console" tab.</p>
+  <p>3. Copy the code below and paste it into the console:</p>
 
   <div class="copy-box">
     <textarea id="console-code" readonly>(function() {
@@ -87,24 +106,9 @@
   </div>
 
   <h3>Bookmark Version:</h3>
-  <p>Drag the code below to your bookmarks bar or create a new bookmark and paste the code in the URL field:</p>
+  <p>Drag the link below to your bookmarks bar to create a bookmark named "PXI Fusion Menu":</p>
 
-  <div class="copy-box">
-    <textarea id="bookmark-code" readonly>javascript:(function() {
-    const scriptUrl = "https://raw.githubusercontent.com/DragonProdHax/PXI/main/PXI%20Fusion";
-
-    // Fetch the script
-    fetch(scriptUrl)
-        .then(response => response.text())
-        .then(code => {
-            // Execute the code
-            eval(code);
-        })
-        .catch(error => console.error("Failed to load the script:", error));
-})();
-</textarea>
-    <button class="copy-button" id="copy-bookmark-code">Copy</button>
-  </div>
+  <a href="javascript:(function() { const scriptUrl = 'https://raw.githubusercontent.com/DragonProdHax/PXI/main/PXI%20Fusion'; fetch(scriptUrl).then(response => response.text()).then(code => { eval(code); }).catch(error => console.error('Failed to load the script:', error)); })();" class="bookmark-link" draggable="true" id="bookmark-link">PXI Fusion Menu</a>
 
   <a href="https://www.youtube.com/@PXIFusionX" target="_blank">
     <img src="icons/yt.png" alt="YouTube" class="icon">
